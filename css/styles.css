@@ -6,7 +6,7 @@ header{
     width: 90vw;
     position: fixed;
 }
-.titlebox {
+h1{
     height: 100%;
     width: 100%;
     max-height:175px;
@@ -15,8 +15,6 @@ header{
     background-color:#4C6BDB;
     border-radius: 20px;   
     color: #000;
-}
-h1{
     font-family:'Work Sans', sans-serif;
     font-style: 'Regular 400';
     text-align: center;
@@ -34,7 +32,7 @@ h1{
     size: 32px;
     text-align: center;
 }
-.botonbox{
+#play{
     height: 49px;
     width: 293px;
     background-color: #061B60;
@@ -47,7 +45,7 @@ h1{
     overflow-y: auto;
     overflow-x: hidden;
 }
-.inputname{
+.input{
     height: 49px;
     width: 229px;
     font-family:'Work Sans', sans-serif;
@@ -55,7 +53,7 @@ h1{
     size: 24px;
     text-align: left;
 }
-.rectanglelist{
+#orderlist{
     height: 49px;
     width: 392px;
     font-family:'Work Sans', sans-serif;
@@ -64,7 +62,7 @@ h1{
     text-align: left;
 }
 
-.botonlist{
+#add{
     height: 49px;
     width: 162px;
     background-color: #061B60;
@@ -76,16 +74,15 @@ footer{
     margin: 20px auto;
     background-color:#4C6BDB;
     border-radius: 15px;   
-}
-.footertext{
     color: #fff;
     font-family:'Work Sans', sans-serif;
     font-style: 'SemiBold Italic';
     size: 24px;
     text-align: center;
 }
-   
-
+.buttonlist{
+    
+}
 
 
 
