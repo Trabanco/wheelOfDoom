@@ -1,1 +1,97 @@
 @import './resetCss.css';
+/*@import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Work+Sans:ital@1&display=swap%27) ;*/
+
+header{
+    height: 35vh;
+    width: 90vw;
+    position: fixed;
+}
+.titlebox {
+    height: 100%;
+    width: 100%;
+    max-height:175px;
+    max-width: 1356px;
+    margin: 20px auto;
+    background-color:#4C6BDB;
+    border-radius: 20px;   
+    color: #000;
+}
+h1{
+    font-family:'Work Sans', sans-serif;
+    font-style: 'Regular 400';
+    text-align: center;
+}
+.boxes{
+    height: 48vw;
+    width: 48vw;
+    background-color: #F5F5F5;
+}
+.box{
+    height: 159px;
+    width: 159px;
+    font-family:'Work Sans', sans-serif;
+    font-style: 'bold';
+    size: 32px;
+    text-align: center;
+}
+.botonbox{
+    height: 49px;
+    width: 293px;
+    background-color: #061B60;
+    color:#fff;
+}
+.list{
+    height: 38vw;
+    width: 38vw;
+    background-color: #F5F5F5; 
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.inputname{
+    height: 49px;
+    width: 229px;
+    font-family:'Work Sans', sans-serif;
+    font-style: 'light';
+    size: 24px;
+    text-align: left;
+}
+.rectanglelist{
+    height: 49px;
+    width: 392px;
+    font-family:'Work Sans', sans-serif;
+    font-style: 'light';
+    size: 32px;
+    text-align: left;
+}
+
+.botonlist{
+    height: 49px;
+    width: 162px;
+    background-color: #061B60;
+    color:#fff;
+}
+footer{
+    height: 15vw;
+    width: 90vw;
+    margin: 20px auto;
+    background-color:#4C6BDB;
+    border-radius: 15px;   
+}
+.footertext{
+    color: #fff;
+    font-family:'Work Sans', sans-serif;
+    font-style: 'SemiBold Italic';
+    size: 24px;
+    text-align: center;
+}
+   
+
+
+
+
+
+
+
+
+
+
