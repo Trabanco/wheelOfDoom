@@ -3,7 +3,7 @@
 // recuperar elemento del html
 
 export function printTitle() {
-    return document.getElementsByTagName('h1').innerHTML = 'Titulo'
+    // return document.getElementsByTagName('h1').innerHTML = 'Titulo'
 }
 
 
