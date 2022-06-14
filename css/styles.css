@@ -63,7 +63,7 @@ main{
     size: 32px;
     display: flex;
     justify-content: space-around;
-    text-align: center;
+    align-items: center;
     background-color: yellowgreen;
 }
 
