@@ -53,16 +53,18 @@ main{
    
 }
 .box{
-    height: 100px;git status
+    height: 100px;
     width: 100px;
     min-height: 10px;
     min-width: 10px;
     font-family:'Work Sans', sans-serif;
     size: 32px;
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
     text-align: center;
-    background-color: yellowgreen;}
+    background-color: yellowgreen;
+}
+
 #play{
     height: 49px;
     width: 293px;
