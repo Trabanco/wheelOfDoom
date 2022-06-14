@@ -32,7 +32,7 @@ main{
     max-width: 1356px;
     min-height: 500px;
     min-width: 360px;
-    background-color: #b59cf0;
+    background-color: #2f2d33;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -53,15 +53,16 @@ main{
    
 }
 .box{
-    height: 159px;
-    width: 159px;
+    height: 100px;
+    width: 100px;
     min-height: 10px;
     min-width: 10px;
     font-family:'Work Sans', sans-serif;
     size: 32px;
-    text-align: center;
+    display: flex;
     
-}
+    text-align: center;
+    background-color: yellowgreen;}
 #play{
     height: 49px;
     width: 293px;
