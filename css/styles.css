@@ -61,8 +61,10 @@ main{
     size: 32px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    background-color: yellowgreen;}
+    text-align: center;
+    background-color: yellowgreen;
+}
+
 #play{
     height: 49px;
     width: 293px;
