@@ -1,83 +1,68 @@
 function app() {
-    const addButton = document.getElementById("add");
-    const editButton = document.querySelector(".edit");
-    const deleteButton = document.querySelector(".delete");
-    const playButton = document.getElementById("play");
-    const colors = [
-        "D93C51",
-        "F6EB15",
-        "4893D8",
-        "A642AD",
-        "4C6BDB",
-        "186887",
-        "DF3C54",
-        "ED8EF7",
-        "F6EB15",
-        "F98323",
-        "ED8EF7",
-        "52ADA8",
-        "E599B7",
-        "D93C51",
-        "906A31",
-        "A642AD",
-        "4893D8",
-        "55DC80",
-    ];
-    const startPlayers = ["Bea", "Susana", "Mario", "Buda", "Max"];
-    let playersListArray = [];
+    const addButton = document.getElementById('add')
+    const playButton = document.getElementById('play')
+    const listPlayers = document.getElementById('orderlist')
+    const boxOfPlayers = document.querySelector('.boxes')
+    const colors = ['D93C51', 'F6EB15', '4893D8', 'A642AD', '4C6BDB', '186887', 'DF3C54', 'ED8EF7', 'F6EB15', 'F98323', 'ED8EF7', '52ADA8', 'E599B7', 'D93C51', '906A31', 'A642AD', '4893D8', '55DC80']
+    const startPlayers = ['Fran', 'Bea', 'Susana', 'Mario', 'Buda', 'Max']
+    let playersListArray = []
 
-    startPlayers.map((element) => {
-        addPlayerToList(element);
-        addPlayerToBox(element);
+
+    startPlayers.map(element => {
+        addPlayersToArray(element)
     });
 
     addButton.onclick = function() {
-        const player = document.getElementById("input");
-        if (player.value.trim() !== "") {
-            addPlayerToList(player.value);
-            addPlayerToBox(player.value);
+        const player = document.getElementById('input')
+        if (player.value.trim() !== '') {
+            addPlayersToArray(player.value)
         }
-        player.value = "";
-        player.focus();
-    };
-
-    function addPlayerToList(player) {
-        buttonsOnList = `<div class="button-container">
-            <button type="button" class="buttonlist edit"></button>
-            <button type="button" class="buttonlist delete"></button>
-        </div>`;
-        let listPlayers = document.getElementById("orderlist");
-        const newLine = document.createElement("div");
-        newLine.className = "boxlist";
-        player = `<p>${player}</p>${buttonsOnList}`;
-        listPlayers.appendChild(newLine).innerHTML = player;
-        playersListArray.push(player);
+        player.value = ''
+        player.focus()
     }
 
-    function addPlayerToBox(player) {
-        const boxOfPlayers = document.querySelector(".boxes");
-        const newBox = document.createElement("div");
-        newBox.style.backgroundColor = `#${getRandomColor()}`;
-        newBox.className = "box";
-        boxOfPlayers.appendChild(newBox).textContent = player;
+    document.getElementById('orderlist').addEventListener('click', (event) => {
+        console.log(event.target.className)
+        console.log(event)
+    })
+
+    function addPlayersToArray(player) {
+        playersListArray.push(player)
+        renderList(playersListArray)
+        renderBox(playersListArray)
+    }
+
+    function renderList(arrayOfPlayers) {
+        listPlayers.innerHTML = ''
+        arrayOfPlayers.map((element, index) => {
+            buttonsOnList = `<div class="buttonlist edit"></div><div class="buttonlist delete"></div>`
+            const newLine = document.createElement('div')
+            newLine.id = index
+            newLine.className = 'boxlist'
+            listPlayers.appendChild(newLine).innerHTML = `<p>${element}</p>${buttonsOnList}`
+        })
+    }
+
+    function renderBox(arrayOfPlayers) {
+        boxOfPlayers.innerHTML = ''
+        arrayOfPlayers.map((element, index) => {
+            const newBox = document.createElement('div')
+            newBox.style.backgroundColor = `#${getRandomColor()}`
+            newBox.id = index
+            newBox.className = 'box'
+            boxOfPlayers.appendChild(newBox).textContent = element
+        })
     }
 
     function getRandomColor() {
-        randomColor = Math.ceil(Math.random() * colors.length);
-        return colors[randomColor];
+        randomColor = Math.ceil(Math.random() * (colors.length))
+        return colors[randomColor]
     }
 
-    editButton.onclick = function() {
-        console.log("Editar jugador de la lista");
-    };
-
-    deleteButton.onclick = function() {
-        console.log("Eliminar jugador de la lista");
-    };
 
     playButton.onclick = function() {
-        console.log("A JUGAR");
-    };
+        console.log('A JUGAR')
+    }
 }
 
-app();
+app()
