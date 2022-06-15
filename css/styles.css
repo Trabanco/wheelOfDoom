@@ -1,5 +1,5 @@
 @import './resetCss.css';
-/*@import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Work+Sans:ital@1&display=swap%27) ;*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Work+Sans:ital@1&display=swap');
 
 
 
@@ -72,7 +72,6 @@ main{
     align-items: center;
     background-color: yellowgreen;
     box-sizing: border-box;
-    ga
    
 }
 
@@ -117,6 +116,11 @@ main{
     background-color: #061B60;
     color:#fff;
 }
+.boxlist{
+    background-color: #f2de57;
+    height: 70px;
+    width: 400px;
+}
 footer{
     height: 15vw;
     width: 90vw;
@@ -133,12 +137,9 @@ footer{
     background-image: "./src/editButton.png";
     height: 15px;
     width: 15px;
+
+
 }
-.buttonlist{
-
-}
-
-
 
 
 
