@@ -27,7 +27,7 @@ function app() {
 
 
     function addPlayerToList(player) {
-        buttonsOnList = '<button type="button" class="buttonlist edit"><img src="./src/editButton.png"></button><button type="button" class="buttonlist delete"><img src="./src/deleteButton.png"></button>'
+        buttonsOnList = '<button type="button" class="buttonlist edit"></button><button type="button" class="buttonlist delete"></button>'
         let listPlayers = document.getElementById('orderlist')
         const newLine = document.createElement('div')
         newLine.className = 'boxlist'
