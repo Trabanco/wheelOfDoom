@@ -8,14 +8,14 @@ body{
 }
 
 header {
-	height: 8vh;
+	height: 10vh;
 	width: 100vw;
 	margin: auto;
 	max-height: 175px;
 	max-width: 98%;
 	min-width: 360px;
 	background-color: #4c6bdb;
-	/*border-radius: 5px;*/
+	border-radius: 5px;
 	position: fixed;
 	top: 0;
 	z-index: 2;
@@ -25,7 +25,7 @@ h1 {
 	width: 100%;
 	color: #000;
 	font-family: "Work Sans", sans-serif;
-	font-size: calc(2em + 2vw);
+	font-size: calc(1.7em + 1.7vw);
 	font-weight: bold;
 	display: flex;
 	justify-content: center;
@@ -36,18 +36,19 @@ main {
 	max-width: 98%;
 	min-height: 500px;
 	min-width: 360px;
-	background-color: #f5f5f5;
+	background-color: #fff;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-evenly;
 	align-items: center;
-	margin-top: 8vh;
+	margin-top: 10vh;
 }
 .boxplay {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 15px;
+	margin:10px auto;
 }
 .boxes {
 	height: 48vw;
@@ -86,6 +87,7 @@ main {
 	width: 90%;
 	max-width: 436px;
 	background-color: #fff;
+	border-radius: 8px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -99,21 +101,22 @@ main {
 .add-name {
 	display: flex;
 	align-items: center;
+	gap:5px;
 }
 
-#input {
-	height: 49px;
+input {
+	height: 43px;
 	width: 229px;
 	font-family: "Work Sans", sans-serif;
-	font-style: "light";
-	size: 24px;
-	text-align: left;
+	font-size: calc(0.5em + 0.5vw);
+	text-align: center;
+	background-color:#fde5a0;
+	
 }
 #orderlist {
 	width: 95%;
 	font-family: "Work Sans", sans-serif;
-	font-style: "light";
-	size: 32px;
+	font-size: calc(0.5em + 0.5vw);
 	text-align: left;
 	display: flex;
 	flex-direction: column;
@@ -124,6 +127,7 @@ main {
 	width: 162px;
 	background-color: #061b60;
 	color: #fff;
+	font-size: calc(0.5em + 0.5vw);
 }
 .boxlist {
 	width: 100%;
@@ -155,7 +159,7 @@ main {
 	background-image: url("/src/deleteButton.png");
 }
 footer {
-	height: 20vh;
+	height: 15vh;
 	width: 100vw;
 	max-width:98% ;
 	max-height:500px ;
