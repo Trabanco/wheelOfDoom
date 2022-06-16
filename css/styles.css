@@ -8,7 +8,7 @@ body{
 }
 
 header {
-	height: 10vh;
+	height: 15vh;
 	width: 100vw;
 	margin: auto;
 	max-height: 175px;
@@ -17,7 +17,7 @@ header {
 	background-color: #4c6bdb;
 	border-radius: 5px;
 	position: fixed;
-	top: 0;
+	top: 5px;
 	z-index: 2;
 }
 h1 {
@@ -25,13 +25,14 @@ h1 {
 	width: 100%;
 	color: #000;
 	font-family: "Work Sans", sans-serif;
-	font-size: calc(1.7em + 1.7vw);
+	font-size: clamp(18px, (1rem + 1vw) * 1.5, 4rem);
 	font-weight: bold;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 main {
+
 	width: 100vw;
 	max-width: 98%;
 	min-height: 500px;
@@ -41,7 +42,7 @@ main {
 	flex-flow: row wrap;
 	justify-content: space-evenly;
 	align-items: center;
-	margin-top: 10vh;
+	margin-top: 15vh;
 }
 .boxplay {
 	display: flex;
@@ -68,7 +69,7 @@ main {
 	min-height: 10px;
 	min-width: 10px;
 	font-family: "Work Sans", sans-serif;
-	size: 32px;
+	font-size: clamp(18px, (1rem + 1vw) * 1.5, 1rem);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -81,6 +82,8 @@ main {
 	background-color: #061b60;
 	color: #fff;
 	position: relative;
+	font-family: "Work Sans", sans-serif;
+	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
 	
 }
 .list {
@@ -100,15 +103,18 @@ main {
 
 .add-name {
 	display: flex;
-	align-items: center;
 	gap:5px;
 }
 
 input {
-	height: 43px;
-	width: 229px;
+	height:5vh;
+	width: 35vw;
+	max-height: 43px;
+	max-width: 239px;
+	min-height: 22px;
+	min-width: 100px;
 	font-family: "Work Sans", sans-serif;
-	font-size: calc(0.5em + 0.5vw);
+	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
 	text-align: center;
 	background-color:#fde5a0;
 	
@@ -116,7 +122,7 @@ input {
 #orderlist {
 	width: 95%;
 	font-family: "Work Sans", sans-serif;
-	font-size: calc(0.5em + 0.5vw);
+	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
 	text-align: left;
 	display: flex;
 	flex-direction: column;
@@ -127,7 +133,7 @@ input {
 	width: 162px;
 	background-color: #061b60;
 	color: #fff;
-	font-size: calc(0.5em + 0.5vw);
+	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
 }
 .boxlist {
 	width: 100%;
@@ -159,7 +165,7 @@ input {
 	background-image: url("/src/deleteButton.png");
 }
 footer {
-	height: 15vh;
+	height: 10vh;
 	width: 100vw;
 	max-width:98% ;
 	max-height:500px ;
@@ -169,7 +175,7 @@ footer {
 	border-radius:0 0 20px 20px ;
 	color: #fff;
 	font-family: "Work Sans", sans-serif;
-	font-size: 24px;
+	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
 	display: flex;
 	align-items: center;
 	justify-content: center;
