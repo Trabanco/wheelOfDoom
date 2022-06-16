@@ -1,4 +1,5 @@
 function app() {
+    const playerInput = document.getElementById('input')
     const addButton = document.getElementById('add')
     const playButton = document.getElementById('play')
     const listPlayers = document.getElementById('orderlist')
@@ -8,17 +9,16 @@ function app() {
     let playersListArray = []
 
 
-    startPlayers.map(element => {
-        addPlayersToArray(element)
+    startPlayers.map((element, index) => {
+        addPlayersToArray(element, index)
     });
 
     addButton.onclick = function() {
-        const player = document.getElementById('input')
-        if (player.value.trim() !== '') {
-            addPlayersToArray(player.value)
+        if (playerInput.value.trim() !== '') {
+            addPlayersToArray(playerInput.value, playerInput.id)
         }
-        player.value = ''
-        player.focus()
+        playerInput.value = ''
+        playerInput.focus()
     }
 
     document.getElementById('orderlist').addEventListener('click', (event) => {
@@ -26,15 +26,26 @@ function app() {
         const indexInArray = event.target.parentNode.id
         buttonListClassName = buttonListClassName.split(' ')
         if (buttonListClassName[1] == 'delete') {
-            eliminarJugador(indexInArray)
+            deletePlayer(indexInArray)
         }
         if (buttonListClassName[1] == 'edit') {
-
+            editPlayer(indexInArray)
         }
     })
 
-    function addPlayersToArray(player) {
-        playersListArray.push(player)
+    function editPlayer(indexInArray) {
+        playerInput.value = playersListArray[indexInArray]
+        playerInput.id = indexInArray
+    }
+
+    function addPlayersToArray(player, index) {
+        if (index < 0) {
+            playersListArray.push(player)
+        }
+        if (!isNaN(index)) {
+            playersListArray[index] = player
+            playerInput.id = '-1'
+        }
         renderList(playersListArray)
         renderBox(playersListArray)
     }
@@ -77,20 +88,26 @@ function app() {
         //comprobar que la lista no está vacia:
         if (playersListArray.length > 1) {
             const index = getRandomNumber(0, playersListArray.length);
-            eliminarJugador(index);
+            deletePlayer(index);
             // actualizarHtml(index); //actualiza el html despues de eliminar los jugadores
         } else {
             alert("Necesitas dos jugadores como mínimo");
         }
-
+        if (playersListArray.length == 1) {
+            console.log('Ganador')
+            playersListArray.map(element => {
+                alert(element + ' - Eres el GANADOR')
+            })
+        }
     }
 
 
     //muestra por consola el jugador que se elimina atendiendo a una posicion aleatoria que se le pasa por parametro
-    function eliminarJugador(posicion) {
+    function deletePlayer(posicion) {
         //console.log("se elimina el jugador de la posición playersListArray[indice random]-> "+posicion);
         //console.log("nombre "+playersListArray[posicion]);
         //console.log("length antes de eliminar->"+playersListArray.length);
+        alert(playersListArray[posicion] + ' - Ha sido eliminado')
         playersListArray.splice(posicion, 1); // sentencia que elimina el jugador del array
         //console.log("length despues de eliminar->" + playersListArray);
         renderList(playersListArray)
