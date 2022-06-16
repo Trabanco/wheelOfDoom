@@ -22,8 +22,15 @@ function app() {
     }
 
     document.getElementById('orderlist').addEventListener('click', (event) => {
-        console.log(event.target.className)
-        console.log(event)
+        let buttonListClassName = event.target.className
+        const indexInArray = event.target.parentNode.id
+        buttonListClassName = buttonListClassName.split(' ')
+        if (buttonListClassName[1] == 'delete') {
+            eliminarJugador(indexInArray)
+        }
+        if (buttonListClassName[1] == 'edit') {
+
+        }
     })
 
     function addPlayersToArray(player) {
@@ -35,7 +42,7 @@ function app() {
     function renderList(arrayOfPlayers) {
         listPlayers.innerHTML = ''
         arrayOfPlayers.map((element, index) => {
-            buttonsOnList = `<div class="buttonlist edit"></div><div class="buttonlist delete"></div>`
+            const buttonsOnList = `<div class="button-container" id="${index}"><div class="buttonlist edit"></div><div class="buttonlist delete"></div></div>`
             const newLine = document.createElement('div')
             newLine.id = index
             newLine.className = 'boxlist'
@@ -59,10 +66,46 @@ function app() {
         return colors[randomColor]
     }
 
+    //############################################
+
+    //genera entero aleatorio entre dos numeros min(incluido) max(excluido)
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
 
     playButton.onclick = function() {
-        console.log('A JUGAR')
+        //comprobar que la lista no está vacia:
+        if (playersListArray.length > 1) {
+            const index = getRandomNumber(0, playersListArray.length);
+            eliminarJugador(index);
+            // actualizarHtml(index); //actualiza el html despues de eliminar los jugadores
+        } else {
+            alert("Necesitas dos jugadores como mínimo");
+        }
+
     }
+
+
+    //muestra por consola el jugador que se elimina atendiendo a una posicion aleatoria que se le pasa por parametro
+    function eliminarJugador(posicion) {
+        //console.log("se elimina el jugador de la posición playersListArray[indice random]-> "+posicion);
+        //console.log("nombre "+playersListArray[posicion]);
+        //console.log("length antes de eliminar->"+playersListArray.length);
+        playersListArray.splice(posicion, 1); // sentencia que elimina el jugador del array
+        //console.log("length despues de eliminar->" + playersListArray);
+        renderList(playersListArray)
+        renderBox(playersListArray)
+    }
+
+    /*
+     function actualizarHtml(index) {
+         $(".box").eq(index).remove(); //elimina el player del boxcontent
+
+
+         let listPlayers = document.getElementById("orderlist");
+         listPlayers.getElementsByClassName("boxplay")[index].remove(); //elimina el player de la lista
+     }
+     */
 }
 
 app()
