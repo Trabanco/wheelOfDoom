@@ -1,56 +1,58 @@
 @import "./resetCss.css";
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono&family=Work+Sans:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
 
-body{
-	display:flex;
+body {
+	display: flex;
 	flex-direction: column;
 	align-items: center;
+	font-family: "Work Sans";
 }
 
 header {
 	height: 15vh;
 	width: 100vw;
-	margin: auto;
 	max-height: 175px;
 	max-width: 98%;
 	min-width: 360px;
-	background-color: #4c6bdb;
-	border-radius: 5px;
 	position: fixed;
-	top: 5px;
+	border-radius: 20px;
+	margin: 5px auto;
+	background-color: #4c6bdb;
 	z-index: 2;
 }
+
 h1 {
 	height: 100%;
 	width: 100%;
-	color: #000;
-	font-family: "Work Sans", sans-serif;
-	font-size: clamp(18px, (1rem + 1vw) * 1.5, 4rem);
-	font-weight: bold;
+	font-size: clamp(48px, 6vw, 96px);
+	font-weight: 900;
+	line-height: 112px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-main {
 
+main {
 	width: 100vw;
 	max-width: 98%;
 	min-height: 500px;
 	min-width: 360px;
+	margin-top: 15vh;
 	background-color: #fff;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-evenly;
 	align-items: center;
-	margin-top: 15vh;
 }
+
 .boxplay {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 10px auto;
 	gap: 15px;
-	margin:10px auto;
 }
+
 .boxes {
 	height: 48vw;
 	width: 90vw;
@@ -59,99 +61,114 @@ main {
 	min-height: 260px;
 	min-width: 360px;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	justify-content: space-around;
 }
+
 .box {
 	height: 75px;
 	width: 75px;
 	min-height: 10px;
 	min-width: 10px;
-	font-family: "Work Sans", sans-serif;
-	font-size: clamp(18px, (1rem + 1vw) * 1.5, 1rem);
+	background-color: yellowgreen;
+	font-size: clamp(16px, 6vw, 18px);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background-color: yellowgreen;
 	box-sizing: border-box;
 }
+
 #play {
 	height: 49px;
 	width: 293px;
 	background-color: #061b60;
 	color: #fff;
 	position: relative;
-	font-family: "Work Sans", sans-serif;
-	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
-	
+	font-size: clamp(18px, 6vw, 32px);
+	border-radius: 10px;
 }
+
 .list {
 	width: 90%;
 	max-width: 436px;
-	background-color: #fff;
-	border-radius: 8px;
+	max-height: 500px;
+	min-height: max-content;
+	background-color: transparent;
+	row-gap: calc(0.3vw + 0.3vh);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	row-gap: calc(0.3vw + 0.3vh);
-	overflow-y:scroll;
-	overflow-x: hidden;
-	max-height: 500px;
-	min-height: max-content;
-}
-
-.add-name {
-	display: flex;
-	gap:5px;
 }
 
 input {
-	height:5vh;
+	height: 5vh;
 	width: 35vw;
 	max-height: 43px;
 	max-width: 239px;
 	min-height: 22px;
-	min-width: 100px;
-	font-family: "Work Sans", sans-serif;
-	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
+	background-color: #fde5a0;
+	font-size: clamp(18px, 6vw, 24px);
 	text-align: center;
-	background-color:#fde5a0;
-	
+	border-radius: 6px;
 }
+
 #orderlist {
 	width: 95%;
-	font-family: "Work Sans", sans-serif;
-	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
+	font-size: clamp(18px, 6vw, 24px);
+	overflow-y: scroll;
+	overflow-x: hidden;
 	text-align: left;
 	display: flex;
 	flex-direction: column;
 	row-gap: 5px;
 }
+
+#orderlist::-webkit-scrollbar {
+	width: 12px;
+}
+
+#orderlist::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+#orderlist::-webkit-scrollbar-thumb {
+	background-color: #4c6bdb;
+	border-radius: 50px;
+}
+
 #add {
 	height: 49px;
 	width: 162px;
 	background-color: #061b60;
 	color: #fff;
-	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
+	font-size: clamp(18px, 6vw, 24px);
+	border-radius: 6px;
 }
+
 .boxlist {
 	width: 100%;
 	background-color: #f2de57;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-radius: 6px;
 }
-.button-container{
+
+.boxlist p {
+	padding: 5px;
+}
+
+.button-container {
 	display: flex;
 }
+
 .buttonlist {
 	height: calc(2vw + 2vh);
 	width: calc(2vw + 2vh);
-	max-height: 30px;	
-	max-width:30px ;
-	min-height:15px;
-	min-width:15px ;
+	max-height: 30px;
+	max-width: 30px;
+	min-height: 15px;
+	min-width: 15px;
 	background-position: center;
 	background-size: cover;
 	border: none;
@@ -161,22 +178,27 @@ input {
 .buttonlist.edit {
 	background-image: url("/src/editButton.png");
 }
+
 .buttonlist.delete {
 	background-image: url("/src/deleteButton.png");
 }
+
 footer {
-	height: 10vh;
+	height: 5vh;
 	width: 100vw;
-	max-width:98% ;
-	max-height:500px ;
+	max-width: 98%;
 	min-width: 300px;
-	min-height:100px ;
+	min-height: 70px;
 	background-color: #4c6bdb;
-	border-radius:0 0 20px 20px ;
+	border-radius: 20px;
 	color: #fff;
-	font-family: "Work Sans", sans-serif;
-	font-size: clamp(18px, (1rem + 1vw) * 1.25, 1.5rem);
+	font-size: clamp(16px, 6vw, 20px);
+	margin: 5px auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+footer p {
+	text-align: center;
 }
